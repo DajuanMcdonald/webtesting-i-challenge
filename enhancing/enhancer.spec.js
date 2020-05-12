@@ -10,8 +10,19 @@ describe('* testing the enhancer file', () => {
         it('expect object to have property value of', () => {
             expect(enhancer.get({name: 'Bat', durability: 4, enhancement: 2})).toHaveProperty('enhancement', 2)
         })
+
+        it('expect objects to be in rage of', () => {
+            const item = {
+                name: 'Numb-Chucks',
+                durability: 21,
+                enhancement: 12
+            }
+
+            expect(item.durability).toBeInRange(0, 100)
+            expect(item.enhancement).toBeInRange(0, 20)
+        })
     })    
-})
+});
 
 //custom toBeInRange matcher
 expect.extend({
@@ -20,14 +31,15 @@ expect.extend({
             if(pass) {
                 return {
                     message: () => `expected ${received} not to be in range ${floor} - ${ceiling}`,
-                        pass: true,
-                        };
-            } else {
+                    pass: true,
+                };
+            } 
+            else {
                 return {
-                     message: () => `expected ${received} to be in range ${floor} - ${ceiling}`,
-                            pass: false,
-                    };
-                }
+                    message: () => `expected ${received} to be in range ${floor} - ${ceiling}`,
+                    pass: false,
+                };
+            }
     }
 });
     
@@ -45,4 +57,4 @@ describe('* testing custom matchers for enhancement and durability', () => {
             expect(dur.durability).toBeInRange(0, 100)
         })
     })
-})
+});
