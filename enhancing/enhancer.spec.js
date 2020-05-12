@@ -10,4 +10,5 @@ describe('testing the enhancer file', () => {
             expect(enhancer.get({name: 'Bat', durability: 4, enhancement: 2})).toHaveProperty('enhancement', 2)
         })
     })
+    
 })
