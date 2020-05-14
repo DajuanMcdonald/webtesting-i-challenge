@@ -24,8 +24,13 @@ describe('*Testing the enhancer file', () => {
         })
     })
 
-    describe('testing success() method on accept object', () => {
+    describe('testing succeed() method on accept object', () => {
         it('expect enhancement object increment by 1', () => {
+            const item = {
+                enhancement: 10,
+                durability: 0
+            }
+                
             
         })
     })
